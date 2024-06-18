@@ -5,14 +5,46 @@
   <meta http-equiv="expires" content="0"/>
   <meta http-equiv="pragma" content="no-cache"/>
   <meta charset="UTF-8">
+  
   <title>Kahvi Games</title>
+  <link rel="icon" href="fav.svg" type="image/svg" />
+
   <style>
     html, body { height: 100%; }
-    html { display: table; margin: auto; }
-    body { display: table-cell; vertical-align: middle; }
+    
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: white;
+      background: radial-gradient(circle, white 33%, #cccccc 75%, #888888 100%);
+    }
+    
+    h1 {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    h1 > span {
+      display: none;
+    }
+    .logo {
+      width: 50%;
+    }
   </style>
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      let linkIcon = document.querySelector('link[rel=icon]');
+      linkIcon.href = linkIcon.href.replace('.svg', '.light.svg');
+    }
+  </script>
 </head>
 <body>
-    <h1>Kahvi Games!</h1>
+    <h1>
+      <img class="logo" src="logo.svg" alt="Kahvi Games logo"/>
+      <span>Kahvi Games!</span>
+    </h1>
 </body>
 </html>
